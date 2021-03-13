@@ -102,7 +102,7 @@ You may need to use the flags --cpu=x64_windows --compiler=mingw-gcc.`)
 		sep = "|"
 		b.WriteString(regexp.QuoteMeta(f))
 	}
-	os.Setenv("CGO_LDFLAGS_ALLOW", b.String())
+	os.Setenv("CGO_LDFLAGS_ALLOW", ".*")
 
 	// Build the commands needed to build the std library in the right mode
 	// NOTE: the go command stamps compiled .a files with build ids, which are
